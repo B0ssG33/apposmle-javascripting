@@ -105,3 +105,83 @@ const testNumber = color === "red" ? 5 : 100; //ternary operator
 
 console.log(testNumber);
 //&& = short circuit, & = will execute all
+
+// truthy
+// string
+// non-zero number
+// any object {}
+// []
+
+
+// falsy
+// ""
+// 0
+// false
+// null
+// undefined
+// NaN
+
+const myVar = null
+
+//const newValue = 0 ?? 'hello2' // null undefined
+//console.log(myVar && 'hello')
+//const newValue = 0 ? 'hello1' : 'hello2' // truthy falsy
+// const newValue = [].length > 0 ? 'hello1' : 'hello2' // truthy falsy
+// const newValue = Object.keys({}).length > 0 ? 'hello1' : 'hello2' // truthy falsy
+// console.log(newValue)
+
+// const person2 = {
+//     name: 'John',
+//     walk:function() {
+//         console.log(`${this.name} Walking...`)
+//     }
+// }
+
+// const person2 = {
+//     name: 'John',
+//     walk() {
+//         // setTimeout(function(){console.log(`${this.name} is walking new...`)}, 3000)
+//         // var self = this
+//         // setTimeout(function(){console.log(`${this.name} is walking new...`)}, 3000)
+
+//         setTimeout(() => {console.log(`${this.name} is walking new...`)}, 3000) // lambda
+//     }
+// }
+
+// person2.walk() // 
+// this.name = 'kelly'
+// const w = person2.walk // no name, scope is inside only, inside of the function
+// w()
+
+// const person2 = {
+//     name: 'Juswa',
+//     walk: ()=> { //arrow function, if binind mo, same behavior if di mo binind. no scoping, tumatalon sa taas (bind using arrow function), this is used para di ka na magbind
+//         // setTimeout(function(){console.log(`${this.name} is walking new...`)}, 3000)
+//         // var self = this
+//         // setTimeout(function(){console.log(`${this.name} is walking new...`)}, 3000)
+
+//         setTimeout(() => {console.log(`${this.name} is walking new...`)}, 3000) // lambda
+//     }
+// }
+
+// //person2.walk() // 
+// this.name = 'kelly' //eto nakikita nya (bind using arrow function), need mo ideclare para ito makuha nya
+// const w = person2.walk.bind(person2) // no name, scope is inside only, inside of the function, solution is to 'bind', pwede ng walang bind if arrow function
+// w()
+
+// const tags = ['tag1', 'tag2', 'tag3']
+
+// // const updatedTags = tags.filter(tag => tag.includes('1')) // using filter
+// // console.log(updatedTags)
+// // console.log(updatedTags[0])
+
+// const updatedTags = tags.find(tag => tag.includes('1')) // using find
+// console.log(updatedTags) // no need to indicate to get the value of the array.
+
+const tags = [
+    {id:1, value:'tag1'},
+    {id:2, value:'tag2'},
+    {id:3, value:'tag3'},
+]
+const updatedTags = tags.find(tag => tag.value.includes('1')) // using find
+console.log(updatedTags) // no need to indicate to get the value of the array.
